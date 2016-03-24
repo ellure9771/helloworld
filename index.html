@@ -10,17 +10,27 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
+        <!-- FOUC -->
+        <style>.js #wrap {display: none;}</style>
+        <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
     </head>
     <body>
-        <!--[if lt IE 8]>
+        <!--[if lt IE 9]>
             <p class="browserupgrade"><strong>구 버전</strong>의 브라우저를 사용하고 있습니다. 원활한 사용자 환경을 위해 <a href="http://browsehappy.com/">브라우저를 업그레이드</a>하십시오.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world!</p>
+        <div id="wrap">
+            <h1>Hello world!</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        <div id="loading"></div>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
@@ -35,6 +45,14 @@
             e.src='https://www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+
+        <!-- <script>document.getElementById("wrap").style.display="block";</script> -->
+        <script>
+        $(function(){
+            $('#wrap').css('display', 'block');
+            $('#loading').hide();
+        });
         </script>
     </body>
 </html>
