@@ -7,21 +7,29 @@
  */
 
 /* ==========================================================================
+   Web font: import
+   ========================================================================== */
+
+ /* Nanum Gothic */
+ @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
 html {
+    font-family: 'Nanum Gothic', sans-serif;
     color: #222;
     font-size: 1em;
     line-height: 1.4;
 }
 
 /*
- * Remove text-shadow in selection highlight:
+ * 가독성을 위해 선택 영역(마우스 드래그등)의 하이라이트 부분에서 `text-shadow` 효과를 제거:
  * https://twitter.com/miketaylr/status/12228805301
  *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
+ * 선택 영역에 대한 규칙은 분리되어 있다.
+ * 본인의 디자인에 맞는 배경 색상을 설정하자.
  */
 
 ::-moz-selection {
@@ -35,7 +43,7 @@ html {
 }
 
 /*
- * A better looking default horizontal rule
+ * 좀 더 세련된 수평선을 위해
  */
 
 hr {
@@ -48,8 +56,7 @@ hr {
 }
 
 /*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
+ * audio, canvas, iframe, image와 video의 컨테이너 하단의 간격을 제거.
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
 
@@ -63,7 +70,7 @@ video {
 }
 
 /*
- * Remove default fieldset styles.
+ * fieldset 요소의 여백과 테두리 제거
  */
 
 fieldset {
@@ -73,7 +80,7 @@ fieldset {
 }
 
 /*
- * Allow only vertical resizing of textareas.
+ * `textarea`의 세로 방향으로만 크기조정 가능
  */
 
 textarea {
@@ -86,17 +93,36 @@ textarea {
 
 .browserupgrade {
     margin: 0.2em 0;
-    background: #ccc;
+    background: #fff;
     color: #000;
-    padding: 0.2em 0;
+    font-family: sans-serif;
+    border: 1px solid #000;
+    padding: 1em;
 }
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
+body {
+    font-size: .75em;
+}
 
+#loading {
+    background: url(../img/loading.gif) no-repeat 0 0;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 50%;
+    top: 50%;
+    margin: 0 -17px 0 -17px;
+}
 
+#wrap {
+    text-align: center;
+    width: 900px;
+    margin: 0 auto;
+}
 
 
 
@@ -116,7 +142,7 @@ textarea {
    ========================================================================== */
 
 /*
- * Hide visually and from screen readers
+ * 시각적으로 숨기고 스크린리더에서도 감춤.
  */
 
 .hidden {
@@ -124,7 +150,7 @@ textarea {
 }
 
 /*
- * Hide only visually, but have it available for screen readers:
+ * 시각적으로 숨기고, 스크린리더에서는 이용가능:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 
@@ -140,8 +166,7 @@ textarea {
 }
 
 /*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
+ * .visuallyhidden 클래스가 지정된 요소에 키보드로 포커스시 화면에 표시:
  * https://www.drupal.org/node/897638
  */
 
@@ -156,7 +181,7 @@ textarea {
 }
 
 /*
- * Hide visually and from screen readers, but maintain layout
+ * 시각적으로 숨기고, 스크린리더에서도 이용할 수 없지만, 화면에 영역은 남김
  */
 
 .invisible {
@@ -167,12 +192,12 @@ textarea {
  * Clearfix: contain floats
  *
  * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
+ * 1. `content` 속성값으로 간격을 벌린 값이 들어갔는데
+ *     이는 `contenteditable` 속성이 문서 어딘가에 포함되면 발생하는 오페라 버그를 회피하는 방법중에 하나이다.
+ *     그렇지않으면, `clearfix` 클래스를 받을 요소의 상단과 하단에 표시할 공간이 발생한다.
+ * 2. `block` 보다 `table`을 사용하는 것이 자식 요소의 `top-margin` 을 포함하는 `:before`를 사용할때 유용하다.
+ *      (The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.)
  */
 
 .clearfix:before,
@@ -192,14 +217,14 @@ textarea {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+    /* 조건을 만족하는 뷰포트에 대한 스타일을 조정 */
 }
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
        (min-resolution: 1.25dppx),
        (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
+    /* 고해상도 기기를 위한 스타일 조정 */
 }
 
 /* ==========================================================================
@@ -215,7 +240,7 @@ textarea {
     *:first-letter,
     *:first-line {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
+        color: #000 !important; /* 검정색의 글씨가 더 빠른 프린트가 가능:
                                    http://www.sanbeiji.com/archives/953 */
         box-shadow: none !important;
         text-shadow: none !important;
