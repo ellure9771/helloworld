@@ -14,8 +14,10 @@
         <style>.js #wrap {display: none;}</style>
         <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
     </head>
@@ -29,11 +31,158 @@
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
+            
+            <div class="sample">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Apple</button>
+                    <button type="button" class="btn btn-primary">Samsung</button>
+                    <button type="button" class="btn btn-primary">Sony</button>
+                </div>
+            </div>
+
+            <div class="sample">
+                <div class="alert alert-success fade in">
+                    <strong>Success!</strong> Indicates a successful or positive action.
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                </div>
+                <div class="alert alert-info">
+                    <strong>Info!</strong> Indicates a neutral informative change or action.
+                </div>
+
+                <div class="alert alert-warning">
+                    <strong>Warning!</strong> Indicates a warning that might need attention.
+                </div>
+
+                <div class="alert alert-danger">
+                    <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+                </div>
+            </div>
+
+            <div class="sample">
+                <ul class="pagination">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
+            </div>
+
+            <div class="sample">
+                <ul class="pager">
+                    <li><a href="#">Previous</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+
+                <a href="#" title="Header" data-toggle="popover" data-placement="top" data-content="Content">Click</a>
+                <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Click</a>
+                <a href="#" title="Header" data-toggle="popover" data-placement="left" data-content="Content">Click</a>
+                <a href="#" title="Header" data-toggle="popover" data-placement="right" data-content="Content">Click</a>
+                <a href="#" data-toggle="popover" title="Popover Header" data-placement="bottom" data-content="Some content inside the popover">Toggle popover</a>
+            </div>
+
+            <div class="sample">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sample">
+                <button data-toggle="collapse" class="btn btn-danger" data-target="#demo">Collapsible</button>
+                <div id="demo" class="collapse in">
+                Lorem ipsum dolor text....
+                </div>
+            </div>
+
+            <div class="sample">
+                <style>
+                .carousel-inner > .item > img,
+                .carousel-inner > .item > a > img {
+                    width: 70%;
+                    margin: auto;
+                }
+                </style>
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="http://www.w3schools.com/bootstrap/img_chania.jpg" alt="Chania">
+                        </div>
+
+                        <div class="item">
+                            <img src="http://www.w3schools.com/bootstrap/img_chania2.jpg" alt="Chania">
+                        </div>
+
+                        <div class="item">
+                            <img src="http://www.w3schools.com/bootstrap/img_flower.jpg" alt="Flower">
+                        </div>
+
+                        <div class="item">
+                            <img src="http://www.w3schools.com/bootstrap/img_flower2.jpg" alt="Flower">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sample">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>Mary</td>
+                            <td>Moe</td>
+                            <td>mary@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>July</td>
+                            <td>Dooley</td>
+                            <td>july@example.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div id="loading"></div>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
@@ -52,6 +201,7 @@
         $(function(){
             $('#wrap').css('display', 'block');
             $('#loading').hide();
+            $('[data-toggle="popover"]').popover();
         });
         </script>
     </body>
