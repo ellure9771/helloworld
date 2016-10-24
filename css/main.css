@@ -1,147 +1,618 @@
-/* ==========================================================================
-   Web font: import
-   ========================================================================== */
-
 @font-face {
-    font-family: 'notokr-r';
-    src: url('../fonts/notokr-regular.eot');
-    src: url('../fonts/notokr-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/notokr-regular.woff2') format('woff2'), url('../fonts/notokr-regular.woff') format('woff'), url('../fonts/notokr-regular.ttf') format('truetype'), url('../fonts/notokr-regular.svg#notokr-regular') format('svg');
+    font-family: "notokr-demi";
+    src: url("../fonts/notokr-demilight.eot");
+    src: url("../fonts/notokr-demilight.eot?#iefix") format("embedded-opentype"), url("../fonts/notokr-demilight.woff2") format("woff2"), url("../fonts/notokr-demilight.woff") format("woff"), url("../fonts/notokr-demilight.ttf") format("truetype"), url("../fonts/notokr-demilight.svg#notokr-demilight") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: 'notokr-b';
-    src: url('../fonts/notokr-bold.eot');
-    src: url('../fonts/notokr-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/notokr-bold.woff2') format('woff2'), url('../fonts/notokr-bold.woff') format('woff'), url('../fonts/notokr-bold.ttf') format('truetype'), url('../fonts/notokr-bold.svg#notokr-bold') format('svg');
+    font-family: "notokr-r";
+    src: url("../fonts/notokr-regular.eot");
+    src: url("../fonts/notokr-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/notokr-regular.woff2") format("woff2"), url("../fonts/notokr-regular.woff") format("woff"), url("../fonts/notokr-regular.ttf") format("truetype"), url("../fonts/notokr-regular.svg#notokr-regular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "notokr-b";
+    src: url("../fonts/notokr-bold.eot");
+    src: url("../fonts/notokr-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/notokr-bold.woff2") format("woff2"), url("../fonts/notokr-bold.woff") format("woff"), url("../fonts/notokr-bold.ttf") format("truetype"), url("../fonts/notokr-bold.svg#notokr-bold") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+/* RESET THE BOX-SIZING */
+
+* {
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/**
+ * BODY RESET
+ *
+ * 1. iOS와 안드로이드의 웹킷 기반 브라우저(사파리, 크롬 등)에서
+ *     링크영역 하이라이트를 삭제
+ */
 
 html {
-    font-family: 'notokr-r', 'Malgun Gothic', sans-serif;
-    color: #222;
-    font-size: .75em;
+    font-size: 100%;
+    -webkit-tap-highlight-color:rgba(0,0,0,0.3); /* 1 */
 }
-a,
-a:link {
+body {
+    font-family: "나눔고딕", NanumGothic, "맑은 고딕", "Malgun Gothic", "돋움" ,dotum, AppleGothic, sans-serif;
     color: #222;
+    font-size: 0.875em;
+    letter-spacing: -1px;
+    line-height: 1.4;
+}
+::-moz-selection {
+    background: #ffb862;
+    text-shadow: none;
+}
+::selection {
+    background: #ffb862;
+    text-shadow: none;
+}
+
+/** COMMON STYLE
+==========================================================================*/
+
+/* LINKS */
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
     text-decoration: none;
 }
 
+/* HEADING */
 
-/*
- * 가독성을 위해 선택 영역(마우스 드래그등)의 하이라이트 부분에서 `text-shadow` 효과를 제거:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * 선택 영역에 대한 규칙은 분리되어 있다.
- * 본인의 디자인에 맞는 배경 색상을 설정하자.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
+.h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small,
+h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small,
+.h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #777;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small,
+h1 .small, .h1 .small, h2 .small, .h2 .small, h3 .small, .h3 .small{
+    font-size: 65%;
+}
+h4 small, .h4 small, h5 small, .h5 small, h6 small, .h6 small,
+h4 .small, .h4 .small, h5 .small, .h5 .small, h6 .small, .h6 .small {
+    font-size: 75%;
+}
+h1, .h1 {
+    font-size: 34px;
+}
+h2, .h2 {
+    font-size: 24px;
+}
+h3, .h3 {
+    font-size: 20px;
+}
+h4, .h4 {
+    font-size: 18px;
+}
+h5, .h5 {
+    font-size: 14px;
+}
+h6, .h6 {
+    font-size: 12px;
 }
 
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+/* FLOATING */
+
+.pull-right {
+    float: right !important;
+}
+.pull-left {
+    float: left !important;
 }
 
-/*
- * 좀 더 세련된 수평선을 위해
- */
+/* TEXT ALIGNMENT */
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+.text-nowrap {
+    white-space: nowrap;
+}
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}
+.lead {
+    font-size: 21px;
+}
+small,
+.small {
+    font-size: 85%;
+}
+mark,
+.mark {
+    background-color: #fcf8e3;
+    padding: .2em;
+}
+address {
+    margin-bottom: 20px;
+    font-style: normal;
+    line-height: 1.42857143;
 }
 
-/*
- * audio, canvas, iframe, image와 video의 컨테이너 하단의 간격을 제거.
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
+/* LIST STYLE */
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-/*
- * fieldset 요소의 여백과 테두리 제거
- */
-
-fieldset {
-    border: 0;
+ul, ol {
+    list-style: none;
     margin: 0;
     padding: 0;
+    margin-top: 0;
+    margin-bottom: 10px
+}
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    margin-bottom: 0
+}
+.list-unstyled {
+    padding-left: 0;
+    list-style: none
+}
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none
+}
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px
+}
+dl {
+    margin-top: 0;
+    margin-bottom: 20px
+}
+dd,dt {
+    line-height: 1.42857143
+}
+dt {
+    font-weight: 700
+}
+dd {
+    margin-left: 0
 }
 
-/*
- * `textarea`의 세로 방향으로만 크기조정 가능
- */
+/* IMAGE */
+
+img,
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.img-rounded {
+    border-radius: 6px;
+}
+.img-thumbnail {
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+.img-circle {
+    border-radius: 50%;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus {
+    color: #333333;
+    text-decoration: none;
+}
+.btn:active,
+.btn.active {
+    outline: 0;
+    background-image: none;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+}
+.btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+/* FORM FIELD */
 
 textarea {
     resize: vertical;
 }
-
-/* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
-
-.browserupgrade {
-    position: fixed;
-    top: 0;
-    left: 0;
+fieldset {
+    border: 0;
+    min-width: 0;
+}
+::-webkit-input-placeholder {
+    color: #ccc; /* Chrome/Opera/Safari */
+}
+::-moz-placeholder {
+    color: #ccc; /* Firefox 19+ */
+}
+:-ms-input-placeholder {
+    color: #ccc; /* IE 10+ */
+}
+:-moz-placeholder {
+    color: #ccc; /* Firefox 18- */
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="search"] {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+input[type="file"] {
+    display: block;
+}
+input[type="range"] {
+    display: block;
     width: 100%;
-    background: #f7f7f7;
-    border-bottom: 2px solid #f5b63b;
-    color: #000;
-    font-family: sans-serif;
-    margin: 0 0 1em;
-    padding: 1em 0;
-    text-align: center;
-    z-index: 999;
 }
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-body {
-    font-family: 'notokr-r', 'Malgun Gothic', sans-serif;
-    color: #222;
-    font-size: 1em;
-    min-width: 1200px;
+select[multiple],
+select[size] {
+    height: auto;
 }
-
-#loading {
-    background: url(../img/loading.gif) no-repeat 0 0;
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.help-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #737373;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.form-control[disabled],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+}
+.form-horizontal .radio,
+.form-horizontal .checkbox,
+.form-horizontal .radio-inline,
+.form-horizontal .checkbox-inline {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 7px;
+}
+.form-horizontal .radio,
+.form-horizontal .checkbox {
+    min-height: 27px;
+}
+.form-horizontal .form-group {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.radio,
+.checkbox {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.radio label,
+.checkbox label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
     position: absolute;
-    width: 35px;
-    height: 35px;
-    left: 50%;
-    top: 50%;
-    margin: 0 -17px 0 -17px;
+    margin-left: -20px;
+    margin-top: 4px \9;
+}
+.radio + .radio,
+.checkbox + .checkbox {
+    margin-top: -5px;
+}
+.radio-inline,
+.checkbox-inline {
+    display: inline-block;
+    padding-left: 20px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-weight: normal;
+    cursor: pointer;
+}
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+    margin-top: 0;
+    margin-left: 10px;
+}
+input[type="radio"][disabled],
+input[type="checkbox"][disabled],
+input[type="radio"].disabled,
+input[type="checkbox"].disabled,
+fieldset[disabled] input[type="radio"],
+fieldset[disabled] input[type="checkbox"] {
+    cursor: not-allowed;
+}
+.radio-inline.disabled,
+.checkbox-inline.disabled,
+fieldset[disabled] .radio-inline,
+fieldset[disabled] .checkbox-inline {
+    cursor: not-allowed;
+}
+.radio.disabled label,
+.checkbox.disabled label,
+fieldset[disabled] .radio label,
+fieldset[disabled] .checkbox label {
+    cursor: not-allowed;
+}
+.input-sm {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+select.input-sm {
+    height: 30px;
+    line-height: 30px;
+}
+textarea.input-sm,
+select[multiple].input-sm {
+    height: auto;
+}
+.input-lg {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+select.input-lg {
+    height: 46px;
+    line-height: 46px;
+}
+textarea.input-lg,
+select[multiple].input-lg {
+    height: auto;
 }
 
+/* ETC. */
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
+#mask {
+    background: rgba(0, 0, 0, 0.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#70000000,endColorstr=#70000000);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 600;
+}
+.divider {
+    display: block;
+    margin: 20px auto;
+    border-top: 1px solid #ddd;
+    height: 1px;
+}
+.close {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2
+}
+.close:focus,
+.close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5
+}
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0
+}
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent
+}
+.clearfix:before,
+.clearfix:after,
+.dl-horizontal dd:before,
+.dl-horizontal dd:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after,
+.form-horizontal .form-group:before,
+.form-horizontal .form-group:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after,
+.dl-horizontal dd:after,
+.container:after,
+.container-fluid:after,
+.row:after,
+.form-horizontal .form-group:after {
+    clear: both;
+}
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+audio, canvas, iframe, img, svg, video {
+    vertical-align: middle;
+}
 
-/*
+/** HELPER CLASSES
+==========================================================================*/
+
+/**
  * 시각적으로 숨기고 스크린리더에서도 감춤.
  */
 
@@ -149,7 +620,7 @@ body {
     display: none !important;
 }
 
-/*
+/**
  * 시각적으로 숨기고, 스크린리더에서는 이용가능:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
@@ -165,7 +636,7 @@ body {
     width: 1px;
 }
 
-/*
+/**
  * .visuallyhidden 클래스가 지정된 요소에 키보드로 포커스시 화면에 표시:
  * https://www.drupal.org/node/897638
  */
@@ -180,7 +651,7 @@ body {
     width: auto;
 }
 
-/*
+/**
  * 시각적으로 숨기고, 스크린리더에서도 이용할 수 없지만, 화면에 영역은 남김
  */
 
@@ -188,7 +659,7 @@ body {
     visibility: hidden;
 }
 
-/*
+/**
  * Clearfix: contain floats
  *
  * For modern browsers
@@ -210,98 +681,308 @@ body {
     clear: both;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
+/** BROWSER UPGRADE PROMPT
+==========================================================================*/
 
-@media only screen and (min-width: 35em) {
-    /* 조건을 만족하는 뷰포트에 대한 스타일을 조정 */
+/**
+ * IE9미만 브라우저에서 접속시
+ *            업데이트 알림문구 노출
+ */
+
+.browser-mask {
+    background: rgba(0, 0, 0, 0.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#70000000,endColorstr=#70000000);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 600;
+}
+.browserupgrade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f7f7f7;
+    border-bottom: 2px solid #f5b63b;
+    color: #000;
+    font-family: sans-serif;
+    margin: 0 0 1em;
+    padding: 1em 0;
+    text-align: center;
+    z-index: 9999;
 }
 
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* 고해상도 기기를 위한 스타일 조정 */
+/** CUSTOM STYLE. 2016.10.21
+==========================================================================*/
+
+/**
+ * 1. 320px ~ 767px : 100% phones, less than 768px
+ * 2. 768px ~ 991px : 750px tablets, 768px and up
+ * 3. 992px ~ 1199px : 970px desktops, 992px and up
+ * 4. 1200px ~ : 1170px large desktops, 1200px and up
+ */
+
+/* 1. Common style: phones, min-width: 320px; */
+
+.container {
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 0 6px;
+}
+.container-fluid {
+    margin: 0 auto;
+    padding: 0 6px;
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+/* SITE-HEADER */
 
-@media print {
-    *,
-    *:before,
-    *:after,
-    *:first-letter,
-    *:first-line {
-        background: transparent !important;
-        color: #000 !important; /* 검정색의 글씨가 더 빠른 프린트가 가능:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
+#site-header h1 {
+    display: inline-block;
+    margin: 0;
+}
+#site-header h1 a {
+    background: url(../img/logo.png) no-repeat 0 0;
+    width: 55px;
+    height: 70px;
+    text-indent: -9999px;
+    margin-left: 15px;
+    margin-top: 15px;
+    display: block;
+}
+#toggle-close {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: #000;
+    text-indent: -9999px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: 195px;
+    top: 0;
+    outline: 0;
+    border: 0;
+}
+#toggle-close:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "\f00d";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    width: 40px;
+    height: 40px;
+    text-indent: 0;
+    line-height: 38px;
+    color: #f58703;
+}
+#toggle-open {
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-indent: -9999px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    background: #fff;
+    right: 20px;
+    top: 20px;
+    outline: 0;
+    border: 0;
+}
+#toggle-open:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "\f0c9";
+    display: inline-block;
+    font: normal normal normal 26px/1 FontAwesome;
+    width: 40px;
+    height: 40px;
+    text-indent: 0;
+    line-height: 38px;
+}
+.toggle-nav {
+    background: #222 url(../img/logo.png) no-repeat 50% 15px;
+    padding-top: 100px;
+    width: 195px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -235px;
+    z-index: 800;
+}
+.toggle-nav li a {
+    color: #fff;
+    display: block;
+    padding: 0 20px;
+    line-height: 2.4;
+    font-weight: bold;
+    position: relative;
+}
+.toggle-nav li.main-cate>a:after {
+    content: "\f068";
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+.toggle-nav li.last>a:after {
+    display: none;
+}
+.toggle-nav li {
+    background: #f89f06;
+    border-top: 1px solid #ccc;
+}
+.toggle-nav li:first-child {
+    border-top: 0;
+}
+.toggle-nav li.last {
+    background: #222;
+    border-bottom: 1px solid #333;
+}
+.toggle-nav li.last a {
+    border-bottom: 1px solid #000;
+}
+.toggle-nav li li {
+    background: #fff;
+}
+.toggle-nav li li a {
+    color: #333;
+}
+#gnb {
+    padding-top: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+#gnb li {
+    display: inline-block;
+    font-size: 0;
+}
+#gnb li a {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    padding: 0 6px;
+}
+
+
+/* SITE-FOOTER */
+
+#site-footer {
+    margin-top: 40px;
+}
+#site-footer {
+    background: #222;
+    padding: 40px 0;
+    text-align: center;
+    color: #777;
+    line-height: 1.6;
+    font-size: 13px;
+}
+#site-footer .logo {
+    color: #f58703;
+    font-size: 22px;
+}
+
+
+/**
+ * 2. Tablets
+ * Web font: 모바일에서는 기본 시스템 글꼴 표기, Tablet & Desktop 이상 기기에서만 사용
+ */
+@media all and (min-width:768px) {
+    body {
+        font-family: "notokr-r", "나눔바른고딕", NanumBarunGothic, "나눔고딕", NanumGothic, "맑은 고딕", "Malgun Gothic", "돋움" ,dotum, AppleGothic, sans-serif;
     }
-
-    a,
-    a:visited {
-        text-decoration: underline;
+    .container {
+        width: 750px;
+        -webkit-transition: width 0.3s;
+        transition: width 0.3s;
+        padding: 0 15px;
     }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
+    .container-fluid {
+        padding: 0 15px;
     }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
+    .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle
     }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
+    .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle
     }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
+    .form-inline .checkbox,
+    .form-inline .radio {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+        vertical-align: middle
     }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
+    .form-inline .checkbox label,
+    .form-inline .radio label {
+        padding-left: 0
     }
-
-    tr,
-    img {
-        page-break-inside: avoid;
+    .form-inline .checkbox input[type=checkbox],
+    .form-inline .radio input[type=radio] {
+        position: relative;
+        margin-left: 0
     }
-
-    img {
-        max-width: 100% !important;
+    .dl-horizontal dt {
+        float:left;
+        width: 160px;
+        overflow: hidden;
+        clear: left;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap
     }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
+    .dl-horizontal dd {
+        margin-left: 180px
     }
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        font-family: "notokr-b" !important;
+    }
+    h1, .h1 {
+        font-size: 46px;
+    }
+    h2, .h2 {
+        font-size: 38px;
+    }
+    h3, .h3 {
+        font-size: 24px;
+    }
+    h4, .h4 {
+        font-size: 18px;
+    }
+    h5, .h5 {
+        font-size: 14px;
+    }
+    h6, .h6 {
+        font-size: 12px;
+    }
+}
 
-    h2,
-    h3 {
-        page-break-after: avoid;
+/* 3. Large tablets, small desktops */
+
+@media all and (min-width:992px) {
+
+    .container {
+         width: 970px;
+    }
+}
+
+/* 4. Large descktops */
+
+ @media all and (min-width:1200px) {
+
+    .container {
+         width: 1100px;
     }
 }
