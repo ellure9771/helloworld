@@ -1,7 +1,35 @@
+@charset "utf-8";
+
+/**
+ * 1.0 - 기본 설정
+ * 2.0 - 사이트 구조
+ * 2.1 - 회사소개
+ * 2.2 - 사업분야
+ * 2.3 -
+ * 2.4 -
+ * 2.5 - 게시판
+ * 3.0 - 플러그인
+ * 4.0 - 미디어 쿼리
+ * --------------------------------------------------------------------------
+ */
+
+/* ==========================================================================
+ * 1.0 기본 설정
+ * ========================================================================== */
+
+/* WEB FONT */
+
+@font-face {
+    font-family: "notokr-th";
+    src: url("../fonts/notokr-thin.eot");
+    src: url("../fonts/notokr-thin.eot?#iefix") format("embedded-opentype"), url("../fonts/notokr-thin.woff2") format("woff2"), url("../fonts/notokr-thin.woff") format("woff"), url("../fonts/notokr-thin.ttf") format("truetype"), url("../fonts/notokr-thin.svg#notokr-thin") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
 @font-face {
     font-family: "notokr-demi";
-    src: url("../fonts/notokr-demilight.eot");
-    src: url("../fonts/notokr-demilight.eot?#iefix") format("embedded-opentype"), url("../fonts/notokr-demilight.woff2") format("woff2"), url("../fonts/notokr-demilight.woff") format("woff"), url("../fonts/notokr-demilight.ttf") format("truetype"), url("../fonts/notokr-demilight.svg#notokr-demilight") format("svg");
+    src: url("../fonts/notokr-light.eot");
+    src: url("../fonts/notokr-light.eot?#iefix") format("embedded-opentype"), url("../fonts/notokr-light.woff2") format("woff2"), url("../fonts/notokr-light.woff") format("woff"), url("../fonts/notokr-light.ttf") format("truetype"), url("../fonts/notokr-light.svg#notokr-light") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -19,6 +47,13 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: "notokr-bk";
+    src: url("../fonts/notokr-black.eot");
+    src: url("../fonts/notokr-black.eot?#iefix") format("embedded-opentype"), url("../fonts/notokr-black.woff2") format("woff2"), url("../fonts/notokr-black.woff") format("woff"), url("../fonts/notokr-black.ttf") format("truetype"), url("../fonts/notokr-black.svg#notokr-black") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* RESET THE BOX-SIZING */
 
@@ -32,9 +67,7 @@
 
 /**
  * BODY RESET
- *
- * 1. iOS와 안드로이드의 웹킷 기반 브라우저(사파리, 크롬 등)에서
- *     링크영역 하이라이트를 삭제
+ * 1. iOS와 안드로이드의 웹킷 기반 브라우저(사파리, 크롬 등)에서 링크영역 하이라이트를 삭제
  */
 
 html {
@@ -49,16 +82,13 @@ body {
     line-height: 1.4;
 }
 ::-moz-selection {
-    background: #ffb862;
+    background: #ffb966;
     text-shadow: none;
 }
 ::selection {
-    background: #ffb862;
+    background: #ffb966;
     text-shadow: none;
 }
-
-/** COMMON STYLE
-==========================================================================*/
 
 /* LINKS */
 
@@ -170,7 +200,7 @@ mark,
     padding: .2em;
 }
 address {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-style: normal;
     line-height: 1.42857143;
 }
@@ -609,8 +639,10 @@ audio, canvas, iframe, img, svg, video {
     vertical-align: middle;
 }
 
-/** HELPER CLASSES
-==========================================================================*/
+/**
+ * HELPER CLASSES
+ * --------------------------------------------------------------------------
+ */
 
 /**
  * 시각적으로 숨기고 스크린리더에서도 감춤.
@@ -681,12 +713,10 @@ audio, canvas, iframe, img, svg, video {
     clear: both;
 }
 
-/** BROWSER UPGRADE PROMPT
-==========================================================================*/
-
 /**
- * IE9미만 브라우저에서 접속시
- *            업데이트 알림문구 노출
+ * BROWSER UPGRADE PROMPT
+ * IE9미만 브라우저에서 접속시 업데이트 알림문구 노출
+ * --------------------------------------------------------------------------
  */
 
 .browser-mask {
@@ -715,18 +745,22 @@ audio, canvas, iframe, img, svg, video {
     z-index: 9999;
 }
 
-/** CUSTOM STYLE. 2016.10.21
-==========================================================================*/
+/* ==========================================================================
+ * 2.0 사이트 구조 (Mobile First)
+ * 320px ~ 767px : 100% phones, less than 768px
+ * ========================================================================== */
 
-/**
- * 1. 320px ~ 767px : 100% phones, less than 768px
- * 2. 768px ~ 991px : 750px tablets, 768px and up
- * 3. 992px ~ 1199px : 970px desktops, 992px and up
- * 4. 1200px ~ : 1170px large desktops, 1200px and up
- */
-
-/* 1. Common style: phones, min-width: 320px; */
-
+#site-header {}
+#site-main {}
+#site-footer {
+    margin-top: 40px;
+    background: #222;
+    padding: 40px 0;
+    text-align: center;
+    color: #777;
+    line-height: 1.6;
+    font-size: 13px;
+}
 .container {
     width: 100%;
     min-width: 320px;
@@ -738,7 +772,10 @@ audio, canvas, iframe, img, svg, video {
     padding: 0 6px;
 }
 
-/* SITE-HEADER */
+/**
+ * SITE-HEADER
+ * --------------------------------------------------------------------------
+ */
 
 #site-header h1 {
     display: inline-block;
@@ -753,6 +790,9 @@ audio, canvas, iframe, img, svg, video {
     margin-top: 15px;
     display: block;
 }
+
+/* TOGGLE NAV */
+
 #toggle-close {
     width: 40px;
     height: 40px;
@@ -855,6 +895,9 @@ audio, canvas, iframe, img, svg, video {
 .toggle-nav li li a {
     color: #333;
 }
+
+/* GNB */
+
 #gnb {
     padding-top: 20px;
     text-align: center;
@@ -871,39 +914,233 @@ audio, canvas, iframe, img, svg, video {
     padding: 0 6px;
 }
 
+/**
+ * SITE-MAIN
+ * --------------------------------------------------------------------------
+ */
 
-/* SITE-FOOTER */
+/* MAIN-VISUAL */
 
-#site-footer {
-    margin-top: 40px;
-}
-#site-footer {
-    background: #222;
-    padding: 40px 0;
-    text-align: center;
-    color: #777;
-    line-height: 1.6;
-    font-size: 13px;
-}
+/**
+ * SITE-FOOTER
+ * --------------------------------------------------------------------------
+ */
+
 #site-footer .logo {
     color: #f58703;
     font-size: 22px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
+/* ==========================================================================
+ * 2.1 회사소개
+ * ========================================================================== */
+
+/* ==========================================================================
+ * 3.0 플러그인
+ * ========================================================================== */
+
+/*
+ * BxSlider (http://bxslider.com)
+ * ----------------------------------------------------------------------------
+ */
+
+.bx-wrapper {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	*zoom: 1;
+}
+
+.bx-wrapper img {
+	max-width: 100%;
+	display: block;
+}
+
+.bx-wrapper .bx-viewport {
+    /*fix other elements on the page moving (on Chrome)*/
+    -webkit-transform: translatez(0);
+    -ms-transform: translatez(0);
+    	transform: translatez(0);
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+	position: absolute;
+	bottom: -30px;
+	width: 100%;
+}
+
+/* LOADER */
+
+.bx-wrapper .bx-loading {
+	min-height: 50px;
+	background: url(../img/bx_loader.gif) center center no-repeat #fff;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+}
+
+/* PAGER */
+
+.bx-wrapper .bx-pager {
+	text-align: center;
+	font-size: .85em;
+	font-family: Arial;
+	font-weight: bold;
+	color: #666;
+	padding-top: 20px;
+}
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+	background: #666;
+	text-indent: -9999px;
+	display: block;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	outline: 0;
+	border-radius: 5px;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+	background: #000;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+
+.bx-wrapper .bx-prev {
+	left: 0;
+    background: #363636 url(../img/main_project_arrow.gif) no-repeat 0 0;
+}
+.bx-wrapper .bx-next {
+	right: 0;
+    background: #363636 url(../img/main_project_arrow.gif) no-repeat -49px 0;
+}
+.bx-wrapper .bx-prev:hover {
+	background-position: 0 0;
+}
+.bx-wrapper .bx-next:hover {
+    background-position: -49px 0;
+}
+.bx-wrapper .bx-controls-direction a {
+	position: absolute;
+	top: 50%;
+	margin-top: -87px;
+	outline: 0;
+	width: 48px;
+	height: 48px;
+	text-indent: -9999px;
+    z-index: 9999;
+    opacity: 0.8;
+    border: 1px solid #111;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+	display: none;
+}
+
+/* AUTO CONTROLS (START / STOP) */
+
+.bx-wrapper .bx-controls-auto {
+	text-align: center;
+}
+.bx-wrapper .bx-controls-auto .bx-start {
+	display: block;
+	text-indent: -9999px;
+	width: 10px;
+	height: 11px;
+	outline: 0;
+	background: url(../img/controls.png) -86px -11px no-repeat;
+	margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active {
+	background-position: -86px 0;
+}
+.bx-wrapper .bx-controls-auto .bx-stop {
+	display: block;
+	text-indent: -9999px;
+	width: 9px;
+	height: 11px;
+	outline: 0;
+	background: url(../img/controls.png) -86px -44px no-repeat;
+	margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
+	background-position: -86px -33px;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+	text-align: left;
+	width: 80%;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+	right: 0;
+	width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+
+.bx-wrapper .bx-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #666\9;
+	background: rgba(80, 80, 80, 0.75);
+	width: 100%;
+}
+.bx-wrapper .bx-caption span {
+	color: #fff;
+	font-family: Arial;
+	display: block;
+	font-size: .85em;
+	padding: 10px;
+}
+
+/* ==========================================================================
+ * 4.0 미디어 쿼리
+ *
+ * 1. 320px ~ 767px : 100% phones, less than 768px
+ * 2. 768px ~ 991px : 750px tablets, 768px and up
+ * 3. 992px ~ 1199px : 970px desktops, 992px and up
+ * 4. 1200px ~ : 1170px large desktops, 1200px and up
+ * ========================================================================== */
 
 /**
  * 2. Tablets
  * Web font: 모바일에서는 기본 시스템 글꼴 표기, Tablet & Desktop 이상 기기에서만 사용
  */
+
 @media all and (min-width:768px) {
     body {
         font-family: "notokr-r", "나눔바른고딕", NanumBarunGothic, "나눔고딕", NanumGothic, "맑은 고딕", "Malgun Gothic", "돋움" ,dotum, AppleGothic, sans-serif;
+        letter-spacing: 0;
     }
+    a:hover,
+    a:focus {
+        color: #666;
+        -webkit-transition: color 0.3s;
+        transition: color 0.3s;
+    }
+
     .container {
         width: 750px;
         -webkit-transition: width 0.3s;
         transition: width 0.3s;
         padding: 0 15px;
+        position: relative;
     }
     .container-fluid {
         padding: 0 15px;
