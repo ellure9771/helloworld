@@ -10,14 +10,12 @@
     margin-left: -3px;
     margin-right: -3px;
 }
-
-    .col {
-        position: relative;
-        min-height: 1px;
-        padding-right: 3px;
-        padding-left: 3px
-    }
-
+.row [class^=col-] {
+    position: relative;
+    min-height: 1px;
+    padding-right: 3px;
+    padding-left: 3px
+}
 
     .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
     .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-15 {
