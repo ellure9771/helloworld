@@ -89,6 +89,10 @@ body {
     background: #ffb966;
     text-shadow: none;
 }
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+    padding: 0;
+    margin: 0;
+}
 
 /* LINKS */
 
@@ -106,7 +110,7 @@ a:focus {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: inherit;
     font-weight: bold;
-    line-height: 1.1;
+    line-height: 1;
     color: inherit;
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
@@ -116,14 +120,6 @@ h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small,
     font-weight: normal;
     line-height: 1;
     color: #777;
-}
-h1, .h1, h2, .h2, h3, .h3 {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-h4, .h4, h5, .h5, h6, .h6 {
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small,
 h1 .small, .h1 .small, h2 .small, .h2 .small, h3 .small, .h3 .small{
@@ -202,20 +198,12 @@ mark,
 address {
     margin-bottom: 25px;
     font-style: normal;
-    line-height: 1.42857143;
 }
 
 /* LIST STYLE */
 
 ul, ol, dl {
     list-style: none;
-    margin: 0;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0
-}
-dd {
-    margin-left: 0
 }
 
 /* IMAGE */
@@ -242,6 +230,31 @@ dd {
 }
 .img-circle {
     border-radius: 50%;
+}
+
+/* TABLE */
+
+table.basic {}
+table.basic th,
+table.basic td {
+    padding: 5px 8px;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+table.bordered {}
+table.bordered th,
+table.bordered td {
+    padding: 5px 8px;
+    border: 1px solid #c5c5c5;
+}
+table.stripe {}
+table.stripe th,
+table.bordered td {
+    padding: 5px 8px;
+}
+table.stripe tr:nth-of-type(2n+0) td,
+table.stripe tr:nth-of-type(2n+0) th {
+    background: #f7f7f7;
 }
 
 /* BUTTONS */
@@ -300,23 +313,20 @@ fieldset[disabled] .btn {
     filter: alpha(opacity=65);
     box-shadow: none;
 }
-.btn-lg {
-    padding: 10px 16px;
-    font-size: 18px;
-    line-height: 1.3333333;
-    border-radius: 6px;
+.btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    border-radius: 3px;
 }
 .btn-sm {
     padding: 5px 10px;
     font-size: 12px;
-    line-height: 1.5;
     border-radius: 3px;
 }
-.btn-xs {
-    padding: 1px 5px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
+.btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    border-radius: 6px;
 }
 
 /* FORM FIELD */
@@ -506,7 +516,7 @@ audio, canvas, iframe, img, svg, video {
     bottom: 0;
     z-index: 9998;
 }
-.browserupgrade {
+.browser-upgrade {
     position: fixed;
     top: 0;
     left: 0;
