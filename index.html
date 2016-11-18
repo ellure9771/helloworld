@@ -7,6 +7,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">-->
+
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
@@ -25,11 +27,95 @@
 
         <a id="skippy" class="visuallyhidden focusable" href="#site-main">주요콘텐츠로 건너뛰기</a>
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <header id="site-header">
+            <h1><a href="./">ELOOM</a></h1>
+            <!-- #toggle-nav: only phone -->
+            <div id="toggle-nav-wrap" class="visible-phone">
+                <h2 class="hidden">모바일 전용 메뉴</h2>
+                <button type="button" id="toggle-open">메뉴열기</button>
+                <div class="toggle-nav">
+                    <button type="button" id="toggle-close">메뉴닫기</button>
+                    <ul>
+                        <li class="main-cate selected"><a href="#">COMPANY</a>
+                            <ul>
+                                <li><a href="#">Ceo</a></li>
+                                <li><a href="#">Overview</a></li>
+                                <li><a href="#">Service</a></li>
+                                <li><a href="#">Ci</a></li>
+                                <li><a href="#">Client</a></li>
+                                <li><a href="#">Location</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-cate"><a href="#">Project</a>
+                            <ul>
+                                <li><a href="#">Golf</a></li>
+                                <li><a href="#">Sports</a></li>
+                                <li><a href="#">Commercial</a></li>
+                                <li><a href="#">Office</a></li>
+                                <li><a href="#">Etc</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-cate"><a href="#">COMMUNICATION</a>
+                            <ul>
+                                <li><a href="#">Media</a></li>
+                                <li><a href="#">Board</a></li>
+                                <li><a href="#">Estimate</a></li>
+                            </ul>
+                        </li>
+                        <li class="main-cate last"><a href="#">ELOOM GOLF</a></li>
+                    </ul>
+                </div><!-- /.toggle-nav -->
+            </div><!-- /#toggle-nav -->
+            <!-- #gnb -->
+            <nav id="gnb" class="main">
+                <h2 class="hidden">메인 메뉴</h2>
+                <ul>
+                    <li><a href="#">COMPANY</a>
+                        <ul class="sub-cate">
+                            <li><a href="#">Ceo</a></li>
+                            <li><a href="#">Overview</a></li>
+                            <li><a href="#">Service</a></li>
+                            <li><a href="#">Ci</a></li>
+                            <li><a href="#">Client</a></li>
+                            <li><a href="#">Location</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">PROJECT</a>
+                        <ul class="sub-cate">
+                            <li><a href="#">Golf</a></li>
+                            <li><a href="#">Sports</a></li>
+                            <li><a href="#">Commercial</a></li>
+                            <li><a href="#">Office</a></li>
+                            <li><a href="#">Etc</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">COMMUNICATION</a>
+                        <ul class="sub-cate">
+                            <li><a href="#">Media</a></li>
+                            <li><a href="#">Board</a></li>
+                            <li><a href="#">Estimate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ELOOM GOLF</a></li>
+                </ul>
+                <ul class="hidden-phone contact-sitemap">
+                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#">SITEMAP</a></li>
+                </ul>
+            </nav><!-- /#gnb -->
+        </header><!-- /#site-header -->
+
+        <section id="site-main">
+
+        </section><!-- /#site-main -->
+
+        <footer id="site-footer">
+            <span class="scroll-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+        </footer><!-- /#site-footer -->
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 

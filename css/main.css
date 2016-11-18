@@ -75,11 +75,14 @@ html {
     -webkit-tap-highlight-color:rgba(0,0,0,0.3); /* 1 */
 }
 body {
-    font-family: "나눔고딕", NanumGothic, "맑은 고딕", "Malgun Gothic", "돋움" ,dotum, AppleGothic, sans-serif;
-    color: #222;
-    font-size: 0.875em;
+    font-family: "맑은 고딕", "Malgun Gothic", "돋움" , dotum, Helvetica, sans-serif;
+    color: #372d2a;
+    font-size: 12px;
     letter-spacing: -1px;
-    line-height: 1.4;
+    line-height: 1.2;
+    background: #e6e6e6;
+    min-width: 320px;
+    height: 100%;
 }
 ::-moz-selection {
     background: #ffb966;
@@ -129,24 +132,6 @@ h4 small, .h4 small, h5 small, .h5 small, h6 small, .h6 small,
 h4 .small, .h4 .small, h5 .small, .h5 .small, h6 .small, .h6 .small {
     font-size: 75%;
 }
-h1, .h1 {
-    font-size: 34px;
-}
-h2, .h2 {
-    font-size: 24px;
-}
-h3, .h3 {
-    font-size: 20px;
-}
-h4, .h4 {
-    font-size: 18px;
-}
-h5, .h5 {
-    font-size: 14px;
-}
-h6, .h6 {
-    font-size: 12px;
-}
 
 /* FLOATING */
 
@@ -160,31 +145,31 @@ h6, .h6 {
 /* TEXT ALIGNMENT */
 
 .text-left {
-    text-align: left;
+    text-align: left !important;
 }
 .text-right {
-    text-align: right;
+    text-align: right !important;
 }
 .text-center {
-    text-align: center;
+    text-align: center !important;
 }
 .text-justify {
-    text-align: justify;
+    text-align: justify !important;
 }
 .text-nowrap {
-    white-space: nowrap;
+    white-space: nowrap !important;
 }
 .text-lowercase {
-    text-transform: lowercase;
+    text-transform: lowercase !important;
 }
 .text-uppercase {
-    text-transform: uppercase;
+    text-transform: uppercase !important;
 }
 .text-capitalize {
-    text-transform: capitalize;
+    text-transform: capitalize !important;
 }
 .lead {
-    font-size: 21px;
+    font-size: 18px;
 }
 small,
 .small {
@@ -195,8 +180,7 @@ mark,
     background-color: #fcf8e3;
     padding: .2em;
 }
-address {
-    margin-bottom: 25px;
+address, em {
     font-style: normal;
 }
 
@@ -208,6 +192,9 @@ ul, ol, dl {
 
 /* IMAGE */
 
+.img-full {
+    width: 100%;
+}
 .img-responsive {
     display: block;
     max-width: 100%;
@@ -230,6 +217,9 @@ ul, ol, dl {
 }
 .img-circle {
     border-radius: 50%;
+}
+.img-full {
+    width: 100%;
 }
 
 /* TABLE */
@@ -328,11 +318,47 @@ fieldset[disabled] .btn {
     font-size: 18px;
     border-radius: 6px;
 }
+.btn-custom-o {
+    width: 49%;
+    background: #ff5c00;
+    border-color: #d44d00;
+    line-height: 1.8;
+    font-size: 16px;
+    font-weight: bold;
+    height: 42px;
+    color: #fff;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=0, Color=#000000)";/*IE 8*//*FF 3.5+*//*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 0 -3px 0 rgba(0,0,0,0.1) inset;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=135, Color=#000000); /*IE 5.5-7*/
+}
+.btn-custom-w {
+    width: 49%;
+    background: #fff;
+    border-color: #715f5a;
+    border-width: 2px;
+    line-height: 1.8;
+    font-size: 16px;
+    font-weight: bold;
+    height: 42px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=0, Color=#000000)";/*IE 8*//*FF 3.5+*//*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 0 -3px 0 rgba(0,0,0,0.1) inset;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=135, Color=#000000); /*IE 5.5-7*/
+}
+.btn-box {
+    padding: 12px;
+    text-align: center;
+}
+.btn-block .btn {
+    display: block;
+    width: 100%;
+}
 
 /* FORM FIELD */
 
 textarea {
     resize: vertical;
+    padding: 5px;
+    min-height: 60px;
 }
 fieldset {
     border: 0;
@@ -349,6 +375,51 @@ fieldset {
 }
 :-moz-placeholder {
     color: #ccc; /* Firefox 18- */
+}
+input[type='email'],
+input[type='password'],
+input[type='text'],
+select,
+textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 30px;
+    line-height: 1.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=0, Color=#000000)";/*IE 8*//*FF 3.5+*//*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) inset;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color=#000000); /*IE 5.5-7*/
+    text-indent: 5px;
+    color: #847672;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select::-ms-expand {
+  display: none;
+}
+.select {
+    position: relative;
+    z-index: 1;
+}
+.select:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    margin-top: -1px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 5px solid #666;
+}
+input[type='radio'],
+input[type='checkbox'] {
+    vertical-align: middle;
+    margin: 0 5px;
 }
 
 /* ETC. */
@@ -370,29 +441,19 @@ fieldset {
     border-top: 1px solid #ddd;
     height: 1px;
 }
-.close {
-    font-size: 21px;
-    font-weight: 700;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    filter: alpha(opacity=20);
-    opacity: .2
-}
-.close:focus,
-.close:hover {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-    filter: alpha(opacity=50);
-    opacity: .5
-}
+.close,
 button.close {
     -webkit-appearance: none;
-    padding: 0;
+    font-size: 18px;
+    line-height: 1;
+    color: #000;
     cursor: pointer;
-    background: 0 0;
-    border: 0
+}
+.close:before,
+button.close:before {
+    content: "\f00d";
+    display: inline-block;
+    font-family: FontAwesome;
 }
 .caret {
     display: inline-block;
@@ -423,6 +484,20 @@ button.close {
 }
 audio, canvas, iframe, img, svg, video {
     vertical-align: middle;
+}
+.pagination {
+    padding: 20px 0;
+    text-align: center;
+}
+.pagination a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #ddd;
+}
+.pagination .on {
+    background: #444;
 }
 
 /**
@@ -633,14 +708,17 @@ audio, canvas, iframe, img, svg, video {
     line-height: 38px;
 }
 .toggle-nav {
-    background: #222 url(../img/logo.png) no-repeat 50% 15px;
-    padding-top: 100px;
     width: 195px;
     height: 100%;
     position: fixed;
     top: 0;
     right: -235px;
     z-index: 800;
+}
+.toggle-nav li {
+    background: #f89f06;
+    border-bottom: 1px solid #db7700;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 .toggle-nav li a {
     color: #fff;
@@ -651,7 +729,7 @@ audio, canvas, iframe, img, svg, video {
     position: relative;
 }
 .toggle-nav li.main-cate>a:after {
-    content: "\f068";
+    content: "\f067";
     display: inline-block;
     position: absolute;
     right: 10px;
@@ -661,9 +739,17 @@ audio, canvas, iframe, img, svg, video {
 .toggle-nav li.last>a:after {
     display: none;
 }
-.toggle-nav li {
-    background: #f89f06;
-    border-top: 1px solid #ccc;
+.toggle-nav li.main-cate>ul {
+    display: none;
+}
+.toggle-nav li.active>ul {
+    display: block;
+}
+.toggle-nav li.active>a:after {
+    content: "\f068";
+}
+.toggle-nav li.last>a:after {
+    display: none;
 }
 .toggle-nav li:first-child {
     border-top: 0;
@@ -677,6 +763,8 @@ audio, canvas, iframe, img, svg, video {
 }
 .toggle-nav li li {
     background: #fff;
+    border-top: 1px solid #ccc;
+    border-bottom: 0;
 }
 .toggle-nav li li a {
     color: #333;
@@ -718,6 +806,28 @@ audio, canvas, iframe, img, svg, video {
     display: inline-block;
     margin-bottom: 10px;
 }
+#site-footer .scroll-top {
+    position: fixed;
+    display: inline-block;
+    right: 20px;
+    bottom: 0;
+    background: #f89f06;
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    color: #fff;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 100%;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+#site-footer .scroll-top.is-showing {
+    bottom: 20px;
+    opacity: 0.7;
+}
 
 /* ==========================================================================
  * 2.1 회사소개
@@ -732,6 +842,11 @@ audio, canvas, iframe, img, svg, video {
  * ----------------------------------------------------------------------------
  */
 
+
+/*
+ * FlexSlider 2 (http://flexslider.woothemes.com/index.html)
+ * ----------------------------------------------------------------------------
+ */
 
 
 
@@ -762,7 +877,7 @@ audio, canvas, iframe, img, svg, video {
 
 @media all and (min-width:768px) {
     body {
-        font-family: "notokr-r", "나눔바른고딕", NanumBarunGothic, "나눔고딕", NanumGothic, "맑은 고딕", "Malgun Gothic", "돋움" ,dotum, AppleGothic, sans-serif;
+        font-family: "notokr-r", "나눔바른고딕", NanumBarunGothic, "나눔고딕", NanumGothic, "맑은 고딕", "Malgun Gothic", "돋움" ,dotum, sans-serif;
         letter-spacing: 0;
     }
     a:hover,
@@ -779,26 +894,60 @@ audio, canvas, iframe, img, svg, video {
         padding: 0 15px;
         position: relative;
     }
-    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-        font-family: "notokr-b" !important;
+    #gnb {
+        padding-top: 60px;
+        width: 80%;
+        margin: 0 10%;
     }
-    h1, .h1 {
-        font-size: 46px;
+    #gnb li {
+        position: relative;
     }
-    h2, .h2 {
-        font-size: 38px;
+    #gnb.main li a {
+        padding: 0 30px;
+        line-height: 40px;
+        color: #000;
     }
-    h3, .h3 {
-        font-size: 24px;
+    #gnb li a {
+        font-family: "notokr-bk";
+        font-size: 16px;
+        white-space: nowrap;
+        padding: 0 30px;
+        color: #fff;
     }
-    h4, .h4 {
-        font-size: 18px;
+    #gnb li a:hover,
+    #gnb li.active a,
+    #gnb li.active a:hover {
+        color: #f89f06 !important;
     }
-    h5, .h5 {
+    #gnb .sub-cate {
+        position: absolute;
+        left: 10px;
+        top: 25px;
+        min-width: 400px;
+        text-align: left;
+        opacity: 0;
+        display: block;
+    }
+    #gnb .sub-cate.active {
+        opacity: 1;
+        top: 38px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    #gnb .sub-cate li {
+        padding: 4px 8px;
+        background: #f89f06;
+    }
+    #gnb .sub-cate li a {
         font-size: 14px;
+        font-weight: normal;
+        font-family: 'notokr-r';
+        color: #fff;
+        padding: 0;
+        line-height: normal;
     }
-    h6, .h6 {
-        font-size: 12px;
+    #gnb .sub-cate li a:hover {
+        color: rgba(255, 255, 255, 0.67) !important;
     }
 }
 
