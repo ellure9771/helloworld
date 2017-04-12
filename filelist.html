@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>파일목록</title>
+    <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style type="text/css">
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,input,button {font-family:NanumGothic;}
+        body {font-size:0.75em;color:#444;margin:0;padding:0;*word-break:break-all;-ms-word-break:break-all;}
+        .wrap {padding:15px;}
+        h1 b {color:#2083e7}
+        table {width:100%;border-collapse:collapse;border-spacing:0}
+        table.list th, table.list td {padding:8px;}
+        table.list th {color:#000;border-bottom:2px #bbb solid;}
+        table.list td {color:#666;border-bottom:1px #bbb solid;}
+        table.bordered {border-top:1px #ddd solid;border-right:1px #ddd solid;}
+        table.bordered th, table.bordered td {border-left:1px #ddd solid;}
+        table.boxed {border-top:1px #ddd solid;}
+        table.boxed thead {border-right:1px #ddd solid;}
+        table.boxed th {background:#f3f3f3;border-left:1px #ddd solid;}
+        table.basic {border-top:1px #ddd solid;}
+        table.basic th, table.basic td {padding:8px;border-bottom:1px #ddd solid;}
+        table.basic th {color:#000;}
+        table.basic td {color:#666;height:14px;}
+        table td:nth-of-type(1),table td:nth-of-type(5),table td:nth-of-type(6),table td:nth-of-type(7),table td:nth-of-type(8) {text-align:center;}
+        table td:nth-of-type(6) {color:#079d6a}
+        table td:nth-of-type(7) {font-weight: bold}
+        table.th-effect th {background:#f3f3f3;}
+        table tr:hover td {background: #f7fbff}
+        span{color:#f75252;}
+        span.o{color:#f78b52;}
+        span.g{color:#2dba8a;}
+        span.p{color:#aa62fd;}
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $("td").each(function(){
+                if($(this).text().indexOf('.asp')>0 || $(this).text().indexOf('.php')>0 || $(this).text().indexOf('.html')>0 || $(this).text().indexOf('.htm')>0){
+                    $(this).css({'cursor':'pointer','text-decoration':'underline'});
+                    $(this).click(function(){
+                        window.open('./'+$(this).text(),'','');
+                    });
+                }
+            });
+            $("tr td:last-child").each(function(){
+                if($(this).text().indexOf('완료')>=0) {
+                    $(this).css('color','#2083e7');
+                } else {
+                    $(this).css('color','#e86729');
+                }
+            });
+        });
+    </script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="wrap">
+    <h1><b>나눔드림</b> HTML LIST</h1>
+    <table class="basic list th-effect">
+        <colgroup>
+            <col width="10%">
+            <col width="10%">
+            <col width="8%">
+            <col width="*">
+            <col width="*">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="2">메뉴</th>
+                <th>경로</th>
+                <th>파일명</th>
+                <th>설명&amp;비고</th>
+                <th>작업일</th>
+                <th>최종수정일</th>
+                <th>진행현황</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>메인</td>
+                <td></td>
+                <td>/</td>
+                <td>index.html</td>
+                <td>0_intro.psd</td>
+                <td>16.11.10</td>
+                <td>16.11.11</td>
+                <td>완료</td>
+            </tr>
+            <tr>
+                <td>기업소개</td>
+                <td>회사소개</td>
+                <td>/</td>
+                <td>sub1_1.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>CEO 인사말</td>
+                <td>/</td>
+                <td>sub1_2.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>경영이념</td>
+                <td>/</td>
+                <td>sub1_3.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>CI</td>
+                <td>/</td>
+                <td>sub1_4.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>연혁</td>
+                <td>/</td>
+                <td>sub1_5.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>오시는 길</td>
+                <td>/</td>
+                <td>sub1_6.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>사업소개</td>
+                <td>국내 파트너쉽</td>
+                <td>/</td>
+                <td>sub2_1.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>글로벌 사업영역</td>
+                <td>/</td>
+                <td>sub2_2.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>제품소개</td>
+                <td>Kitchen</td>
+                <td>/</td>
+                <td>sub3_1.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>PR Center</td>
+                <td>대외인증</td>
+                <td>/</td>
+                <td>sub4_1.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>보도자료</td>
+                <td>/</td>
+                <td>sub4_2.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>광고자료</td>
+                <td>/</td>
+                <td>sub4_3.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>영상자료</td>
+                <td>/</td>
+                <td>sub4_4.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>인재채용</td>
+                <td>인재상</td>
+                <td>/</td>
+                <td>sub5_1.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>채용공고</td>
+                <td>/</td>
+                <td>sub5_2.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>고객센터</td>
+                <td></td>
+                <td>/</td>
+                <td>sub6_1.html</td>
+                <td></td>
+                <td>16.11.10</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>/</td>
+                <td>board_view.html</td>
+                <td>게시판 상세 공통</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

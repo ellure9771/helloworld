@@ -273,7 +273,7 @@ table.bordered td {
 }
 table.stripe tr:nth-of-type(2n+0) td,
 table.stripe tr:nth-of-type(2n+0) th,
-table.stripe tbody tr:nth-child(odd) {
+tbody tr:nth-child(odd) {
     background: #f7f7f7;
 }
 
@@ -702,6 +702,7 @@ audio, canvas, iframe, img, svg, video {
 #footer {}
 .container {
     width: 100%;
+    min-width: 320px;
     margin: 0 auto;
     padding: 0 6px;
 }
@@ -721,7 +722,7 @@ audio, canvas, iframe, img, svg, video {
     margin: 0;
 }
 #header h1 a {
-    background: #000;
+    background: url(../img/logo.png) no-repeat 0 0;
     width: 55px;
     height: 70px;
     text-indent: -9999px;
@@ -950,14 +951,82 @@ audio, canvas, iframe, img, svg, video {
 
 /**
  * 2. Tablets
+ * Web font: 모바일에서는 기본 시스템 글꼴 표기, Tablet & Desktop 이상 기기에서만 사용
  */
 
 @media all and (min-width:768px) {
+    body {
+        font-family: "notokr-r", "나눔바른고딕", NanumBarunGothic, "나눔고딕", NanumGothic, "맑은 고딕", "Malgun Gothic", "돋움" ,dotum, sans-serif;
+        letter-spacing: 0;
+    }
+    a:hover,
+    a:focus {
+        color: #666;
+        -webkit-transition: color 0.3s;
+        transition: color 0.3s;
+    }
 
     .container {
         width: 750px;
+        -webkit-transition: width 0.3s;
+        transition: width 0.3s;
         padding: 0 15px;
         position: relative;
+    }
+    #gnb {
+        padding-top: 60px;
+        width: 80%;
+        margin: 0 10%;
+    }
+    #gnb li {
+        position: relative;
+    }
+    #gnb.main li a {
+        padding: 0 30px;
+        line-height: 40px;
+        color: #000;
+    }
+    #gnb li a {
+        font-family: "notokr-bk";
+        font-size: 16px;
+        white-space: nowrap;
+        padding: 0 30px;
+        color: #fff;
+    }
+    #gnb li a:hover,
+    #gnb li.active a,
+    #gnb li.active a:hover {
+        color: #f89f06 !important;
+    }
+    #gnb .sub-cate {
+        position: absolute;
+        left: 10px;
+        top: 25px;
+        min-width: 400px;
+        text-align: left;
+        opacity: 0;
+        display: block;
+    }
+    #gnb .sub-cate.active {
+        opacity: 1;
+        top: 38px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    #gnb .sub-cate li {
+        padding: 4px 8px;
+        background: #f89f06;
+    }
+    #gnb .sub-cate li a {
+        font-size: 14px;
+        font-weight: normal;
+        font-family: 'notokr-r';
+        color: #fff;
+        padding: 0;
+        line-height: normal;
+    }
+    #gnb .sub-cate li a:hover {
+        color: rgba(255, 255, 255, 0.67) !important;
     }
 }
 

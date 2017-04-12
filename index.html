@@ -3,34 +3,45 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>logo</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">-->
-
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+        <link rel="shortcut icon" href="path/to/favicon.ico">
+        <link rel="icon" href="path/to/favicon.png">
+        <!-- <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-152.png"> -->
 
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/flexslider.css">
+        <link rel="stylesheet" href="css/grid.css">
         <link rel="stylesheet" href="css/main.css">
+        <!--[if lt IE 10]>
+            <link rel="stylesheet" href="css/ie9.css">
+        <![endif]-->
         <!--[if lt IE 9]>
             <script src="js/vendor/html5shiv.min.js"></script>
             <script src="js/vendor/respond.min.js"></script>
         <![endif]-->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+        <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script> -->
+        <script src="js/vendor/jquery.min.js"></script>
+        <script src="js/vendor/jquery.flexslider-min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
     </head>
     <body>
         <!--[if lt IE 9]>
             <div class="browser-mask"><p class="browser-upgrade"><strong>구 버전</strong>의 브라우저를 사용하고 있습니다. 원활한 사용자 환경을 위해 <a href="http://browsehappy.com/">브라우저를 업그레이드</a>하십시오.</p></div>
         <![endif]-->
 
-        <a id="skippy" class="visuallyhidden focusable" href="#site-main">주요콘텐츠로 건너뛰기</a>
+        <a id="skippy" class="sr-only focusable" href="#content">주요콘텐츠로 건너뛰기</a>
 
-        <header id="site-header">
-            <h1><a href="./">ELOOM</a></h1>
+        <header id="header">
+            <h1><a href="#">logo</a></h1>
             <!-- #toggle-nav: only phone -->
-            <div id="toggle-nav-wrap" class="visible-phone">
+            <nav id="toggle-nav-wrap" class="visible-phone">
                 <h2 class="hidden">모바일 전용 메뉴</h2>
                 <button type="button" id="toggle-open">메뉴열기</button>
                 <div class="toggle-nav">
@@ -65,7 +76,7 @@
                         <li class="main-cate last"><a href="#">ELOOM GOLF</a></li>
                     </ul>
                 </div><!-- /.toggle-nav -->
-            </div><!-- /#toggle-nav -->
+            </nav><!-- /#toggle-nav -->
             <!-- #gnb -->
             <nav id="gnb" class="main">
                 <h2 class="hidden">메인 메뉴</h2>
@@ -103,31 +114,17 @@
                     <li><a href="#">SITEMAP</a></li>
                 </ul>
             </nav><!-- /#gnb -->
-        </header><!-- /#site-header -->
+        </header><!-- /#header -->
 
-        <section id="site-main">
+        <section id="content">
+            content
+        </section><!-- /#content -->
 
-        </section><!-- /#site-main -->
-
-        <footer id="site-footer">
-            <span class="scroll-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></span>
-        </footer><!-- /#site-footer -->
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
+        <footer id="footer">
+            <address>주소</address>
+            <small>&copy; copyright.</small>
+            <span class="scroll-top" title="맨위로"><i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+        </footer><!-- /#footer -->
     </body>
 
 
