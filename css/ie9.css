@@ -4,3 +4,6 @@
 .select:before {
     display: none;
 }
+select::-ms-expand {
+  display: block;
+}
