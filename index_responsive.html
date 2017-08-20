@@ -5,13 +5,14 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>logo</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"> -->
+        <meta name="format-detection" content="telephone=no, address=no, email=no" />
 
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/flexslider.css">
-        <link rel="stylesheet" href="css/style_m.css">
+        <link rel="stylesheet" href="css/style_responsive.css">
         <!--[if lt IE 10]>
             <link rel="stylesheet" href="css/ie9.css">
         <![endif]-->
@@ -20,8 +21,6 @@
             <script src="js/vendor/respond.min.js"></script>
         <![endif]-->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-        <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script> -->
         <script src="js/vendor/jquery.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/jquery.flexslider-min.js"></script>
@@ -29,10 +28,16 @@
         <script src="js/main.js"></script>
     </head>
     <body>
+        <!--[if lt IE 9]>
+            <div class="browser-mask"><p class="browser-upgrade"><strong>구 버전</strong>의 브라우저를 사용하고 있습니다. 원활한 사용자 환경을 위해 <a href="http://browsehappy.com/">브라우저를 업그레이드</a>하십시오.</p></div>
+        <![endif]-->
+
+        <a id="skippy" class="sr-only focusable" href="#content">주요콘텐츠로 건너뛰기</a>
+
         <div id="wrap">
             <div id="header">
                 <div class="container">
-                    <h1><a href="#"><img src="http://via.placeholder.com/120x50" alt=""></a></h1>
+                    <h1><a href="#"><img src="http://via.placeholder.com/200x100" alt=""></a></h1>
 
                     <div class="toggle-nav-wrap">
                         <button type="button" id="toggle-open" class="btn btn-link"><i class="fa fa-bars" aria-hidden="true"></i><span class="sr-only">메뉴열기</span></button>
@@ -82,7 +87,7 @@
                 <div class="container">content</div>
             </div><!-- /#content -->
 
-            <div id="footer">
+            <div id="footer" class="fixed">
                 <ul>
                     <li><a href="#">menu</a></li>
                     <li><a href="#">menu</a></li>
@@ -91,7 +96,6 @@
                 </ul>
                 <address>주소</address>
                 <small>&copy; copyright.</small>
-                <span class="scroll-top" title="맨위로"><i class="fa fa-arrow-up" aria-hidden="true"></i></span>
             </div><!-- /#footer -->
         </div><!-- /#wrap -->
     </body>

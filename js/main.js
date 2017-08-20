@@ -75,13 +75,14 @@ $(function() {
 
     });
 
-    $('#gnb.main li').on({
-        mouseover: function() {
-            $(this).children('.sub-cate').addClass('active');
-        }, mouseleave: function() {
-            $(this).children('.sub-cate').removeClass('active');
-        }
-    });
+    // 일반 gnb
+//    $('#gnb>ul>li').on({
+//        mouseover: function() {
+//            $(this).children('ul').addClass('active');
+//        }, mouseleave: function() {
+//            $(this).children('ul').removeClass('active');
+//        }
+//    });
 
     $('.tab-contents').each(function() {
         $(this).find('.tab-item').hide();
