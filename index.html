@@ -6,16 +6,13 @@
         <title>logo</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"> -->
+        <meta name="format-detection" content="telephone=no, address=no, email=no" />
 
-        <link rel="shortcut icon" href="path/to/favicon.ico">
-        <link rel="icon" href="path/to/favicon.png">
-        <!-- <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-152.png"> -->
-
-        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/flexslider.css">
-        <link rel="stylesheet" href="css/grid.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
         <!--[if lt IE 10]>
             <link rel="stylesheet" href="css/ie9.css">
         <![endif]-->
@@ -24,9 +21,8 @@
             <script src="js/vendor/respond.min.js"></script>
         <![endif]-->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-        <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script> -->
         <script src="js/vendor/jquery.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/jquery.flexslider-min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
@@ -38,93 +34,56 @@
 
         <a id="skippy" class="sr-only focusable" href="#content">주요콘텐츠로 건너뛰기</a>
 
-        <header id="header">
-            <h1><a href="#">logo</a></h1>
-            <!-- #toggle-nav: only phone -->
-            <nav id="toggle-nav-wrap" class="visible-phone">
-                <h2 class="hidden">모바일 전용 메뉴</h2>
-                <button type="button" id="toggle-open">메뉴열기</button>
-                <div class="toggle-nav">
-                    <button type="button" id="toggle-close">메뉴닫기</button>
-                    <ul>
-                        <li class="main-cate selected"><a href="#">COMPANY</a>
-                            <ul>
-                                <li><a href="#">Ceo</a></li>
-                                <li><a href="#">Overview</a></li>
-                                <li><a href="#">Service</a></li>
-                                <li><a href="#">Ci</a></li>
-                                <li><a href="#">Client</a></li>
-                                <li><a href="#">Location</a></li>
-                            </ul>
-                        </li>
-                        <li class="main-cate"><a href="#">Project</a>
-                            <ul>
-                                <li><a href="#">Golf</a></li>
-                                <li><a href="#">Sports</a></li>
-                                <li><a href="#">Commercial</a></li>
-                                <li><a href="#">Office</a></li>
-                                <li><a href="#">Etc</a></li>
-                            </ul>
-                        </li>
-                        <li class="main-cate"><a href="#">COMMUNICATION</a>
-                            <ul>
-                                <li><a href="#">Media</a></li>
-                                <li><a href="#">Board</a></li>
-                                <li><a href="#">Estimate</a></li>
-                            </ul>
-                        </li>
-                        <li class="main-cate last"><a href="#">ELOOM GOLF</a></li>
+        <div id="wrap">
+            <div id="header">
+                <div class="container">
+                    <h1><a href="#"><img src="http://via.placeholder.com/200x100" alt=""></a></h1>
+
+                    <div id="gnb">
+                        <ul>
+                            <li class="active"><a href="#">sub1</a>
+                                <ul>
+                                    <li><a href="#">sub1-1</a></li>
+                                    <li><a href="#">sub1-2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">sub2</a>
+                                <ul>
+                                    <li><a href="#">sub2-1</a></li>
+                                    <li><a href="#">sub2-2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">sub3</a></li>
+                            <li><a href="">sub4</a></li>
+                            <li><a href="">sub5</a></li>
+                            <li><a href="">sub6</a></li>
+                        </ul>
+                    </div><!-- #gnb -->
+                </div>
+            </div><!-- /#header -->
+
+            <div id="content">
+                <div class="main-visual flexslider">
+                    <ul class="slides">
+                        <li class="item"><a href=""><img src="http://via.placeholder.com/1090x500" alt=""></a></li>
+                        <li class="item"><a href=""><img src="http://via.placeholder.com/1090x500" alt=""></a></li>
+                        <li class="item"><a href=""><img src="http://via.placeholder.com/1090x500" alt=""></a></li>
                     </ul>
-                </div><!-- /.toggle-nav -->
-            </nav><!-- /#toggle-nav -->
-            <!-- #gnb -->
-            <nav id="gnb" class="main">
-                <h2 class="hidden">메인 메뉴</h2>
+                </div>
+                <div class="container">content</div>
+            </div><!-- /#content -->
+
+            <div id="footer">
                 <ul>
-                    <li><a href="#">COMPANY</a>
-                        <ul class="sub-cate">
-                            <li><a href="#">Ceo</a></li>
-                            <li><a href="#">Overview</a></li>
-                            <li><a href="#">Service</a></li>
-                            <li><a href="#">Ci</a></li>
-                            <li><a href="#">Client</a></li>
-                            <li><a href="#">Location</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">PROJECT</a>
-                        <ul class="sub-cate">
-                            <li><a href="#">Golf</a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">Commercial</a></li>
-                            <li><a href="#">Office</a></li>
-                            <li><a href="#">Etc</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">COMMUNICATION</a>
-                        <ul class="sub-cate">
-                            <li><a href="#">Media</a></li>
-                            <li><a href="#">Board</a></li>
-                            <li><a href="#">Estimate</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">ELOOM GOLF</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
                 </ul>
-                <ul class="hidden-phone contact-sitemap">
-                    <li><a href="#">CONTACT US</a></li>
-                    <li><a href="#">SITEMAP</a></li>
-                </ul>
-            </nav><!-- /#gnb -->
-        </header><!-- /#header -->
-
-        <section id="content">
-            content
-        </section><!-- /#content -->
-
-        <footer id="footer">
-            <address>주소</address>
-            <small>&copy; copyright.</small>
-            <span class="scroll-top" title="맨위로"><i class="fa fa-arrow-up" aria-hidden="true"></i></span>
-        </footer><!-- /#footer -->
+                <address>주소</address>
+                <small>&copy; copyright.</small>
+            </div><!-- /#footer -->
+        </div><!-- /#wrap -->
     </body>
 
 
